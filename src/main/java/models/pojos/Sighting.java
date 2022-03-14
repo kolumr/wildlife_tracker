@@ -3,14 +3,16 @@ package models.pojos;
 import models.pojos.Animal;
 
 import java.time.LocalDateTime;
-public class Sighting extends Animal {
+import java.util.Objects;
+
+public class Sighting {
     private String location;
     private String rangerName;
     private LocalDateTime sightingTime;
     private int id;
 
     public Sighting (int id, String name,String location, String rangerName, LocalDateTime sightingTime) {
-        super(id,name);
+        this.id  = id;
         this.location = location;
         this.rangerName = rangerName;
         this.sightingTime = java.time.LocalDateTime.now();
@@ -47,5 +49,18 @@ public class Sighting extends Animal {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sighting sighting = (Sighting) o;
+        return id == sighting.id && location.equals(sighting.location) && rangerName.equals(sighting.rangerName) && sightingTime.equals(sighting.sightingTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(location, rangerName, sightingTime, id);
     }
 }
