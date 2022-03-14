@@ -1,3 +1,7 @@
+package models.pojos;
+
+import models.pojos.Animal;
+
 import java.time.LocalDateTime;
 public class Sighting extends Animal {
     private String location;

@@ -1,4 +1,8 @@
-public class EndangeredAnimal extends Animal{
+package models.pojos;
+
+import models.pojos.Animal;
+
+public class EndangeredAnimal extends Animal {
    private String health;
    private int age;
 

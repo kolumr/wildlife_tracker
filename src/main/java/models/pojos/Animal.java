@@ -1,4 +1,4 @@
-
+package models.pojos;
 
 public class Animal {
     protected int id;
