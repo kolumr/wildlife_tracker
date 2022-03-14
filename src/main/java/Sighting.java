@@ -1,13 +1,12 @@
 import java.time.LocalDateTime;
-import java.text.SimpleDateFormat;
-public class Sighting {
+public class Sighting extends Animal {
     private String location;
     private String rangerName;
     private LocalDateTime sightingTime;
     private int id;
 
-    public Sighting(int id, String location, String rangerName, LocalDateTime sightingTime) {
-        this.id = id;
+    public Sighting (int id, String name,String location, String rangerName, LocalDateTime sightingTime) {
+        super(id,name);
         this.location = location;
         this.rangerName = rangerName;
         this.sightingTime = java.time.LocalDateTime.now();
