@@ -2,7 +2,6 @@ package models.dao;
 
 import models.pojos.Sightings;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 public interface SightingDAO {
