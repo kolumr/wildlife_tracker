@@ -1,10 +1,10 @@
 {{#partial "content"}}
     {{#if animals}}
         {{#each animals}}
-            <div>
-                <h2>ID: {{id}}</h2>
-                <h2>Name: {{name}}</h2>
-            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ID: {{id}}</li>
+                <li class="list-group-item">Name: {{name}}</li>
+            </ul>
         {{/each}}
     {{else}}
         No Animals have been added yet;

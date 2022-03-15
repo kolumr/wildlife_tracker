@@ -45,7 +45,7 @@ public class App {
          }, new HandlebarsTemplateEngine());
         get("/sighting-form", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model, "endangered-animal-form.hbs");
+            return new ModelAndView(model, "sighting-form.hbs");
         }, new HandlebarsTemplateEngine());
         post ("/animal-success", (request, response) -> {
             Map<String, Object> model = new HashMap<>();

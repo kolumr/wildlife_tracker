@@ -1,12 +1,12 @@
 {{#partial "content"}}
     {{#if endangeredAnimals}}
         {{#each endangeredAnimals}}
-            <div>
-                <h2>ID: {{id}}</h2>
-                <h2>Name: {{name}}</h2>
-                <p>Health: {{health}}</p>
-                <p>Age: {{age}}</p>
-            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ID: {{id}}</li>
+                <li class="list-group-item">Name: {{name}}</li>
+                <li class="list-group-item">Health: {{health}}</li>
+                <li class="list-group-item">Age: {{age}}</li>
+            </ul>
         {{/each}}
     {{else}}
         <h2>No Endangered animals Added.</h2>
