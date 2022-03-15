@@ -2,6 +2,8 @@ import models.dao.AnimalImplementationDAO;
 import models.dao.EndangeredAnimalImplementationDAO;
 import models.dao.SightingImplementationDAO;
 import models.pojos.Animals;
+import models.pojos.EndangeredAnimals;
+import models.pojos.Sightings;
 import org.sql2o.Sql2o;
 import java.util.HashMap;
 import java.util.List;
@@ -47,13 +49,32 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "sighting-form.hbs");
         }, new HandlebarsTemplateEngine());
-        post ("/animal-success", (request, response) -> {
+        post ("/animal-form", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int id = Integer.parseInt(request.queryParams("id"));
             String name = request.queryParams("name");
             Animals animal = new Animals(id,name);
             animalImplementationDAO.add(animal);
             return new ModelAndView(model, "animal-form.hbs");
+        }, new HandlebarsTemplateEngine());
+        post ("/sighting-form", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int id = Integer.parseInt(request.queryParams("id"));
+            String location = request.queryParams("location");
+            String name = request.queryParams("name");
+            Sightings sighting = new Sightings(id,location,name);
+            sightingImplementationDAO.add(sighting);
+            return new ModelAndView(model, "sighting-form.hbs");
+        }, new HandlebarsTemplateEngine());
+        post ("/endangered-animal-form", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int id = Integer.parseInt(request.queryParams("id"));
+            String name = request.queryParams("name");
+            String health = request.queryParams("health");
+            int age = Integer.parseInt(request.queryParams("age"));
+            EndangeredAnimals endangeredAnimal = new EndangeredAnimals(id,name,health,age);
+            endangeredAnimalImplementationDAO.add(endangeredAnimal);
+            return new ModelAndView(model, "endangered-animal-form.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }
