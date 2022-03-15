@@ -27,9 +27,13 @@ public class App {
          }, new HandlebarsTemplateEngine());
         get("/animals", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-//            List<Animals> animals = animalImplementationDAO.getAll();
             model.put("animals",animalImplementationDAO.getAll());
-            return new ModelAndView(model, "index.hbs");
+            return new ModelAndView(model, "animals.hbs");
+        }, new HandlebarsTemplateEngine());
+        get("/endangeredAnimals", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("animals",endangeredAnimalImplementationDAO.getAll());
+            return new ModelAndView(model, "endangered-animals.hbs");
         }, new HandlebarsTemplateEngine());
          get("/animal-form", (request, response) -> {
              Map<String, Object> model = new HashMap<>();
