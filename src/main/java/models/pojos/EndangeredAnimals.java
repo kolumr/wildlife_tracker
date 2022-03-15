@@ -1,14 +1,12 @@
 package models.pojos;
 
-import models.pojos.Animal;
-
 import java.util.Objects;
 
-public class EndangeredAnimal extends Animal {
+public class EndangeredAnimals extends Animals {
    private String health;
    private int age;
 
-    public EndangeredAnimal (int id,String name,String health, int age){
+    public EndangeredAnimals(int id, String name, String health, int age){
         super(id,name);
         this.health = health;
         this.age = age;
@@ -35,7 +33,7 @@ public class EndangeredAnimal extends Animal {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        EndangeredAnimal that = (EndangeredAnimal) o;
+        EndangeredAnimals that = (EndangeredAnimals) o;
         return age == that.age && health.equals(that.health);
     }
 

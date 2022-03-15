@@ -1,17 +1,15 @@
 package models.pojos;
 
-import models.pojos.Animal;
-
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Sighting {
+public class Sightings {
     private String location;
     private String rangerName;
     private LocalDateTime sightingTime;
     private int id;
 
-    public Sighting (int id, String name,String location, String rangerName, LocalDateTime sightingTime) {
+    public Sightings(int id, String name, String location, String rangerName, LocalDateTime sightingTime) {
         this.id  = id;
         this.location = location;
         this.rangerName = rangerName;
@@ -55,7 +53,7 @@ public class Sighting {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Sighting sighting = (Sighting) o;
+        Sightings sighting = (Sightings) o;
         return id == sighting.id && location.equals(sighting.location) && rangerName.equals(sighting.rangerName) && sightingTime.equals(sighting.sightingTime);
     }
 
