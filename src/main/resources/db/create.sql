@@ -1,6 +1,6 @@
-SET MODE PostgreSQL;
-
-CREATE TABLE IF NOT EXISTS animal (
-  id int PRIMARY KEY auto_increment,
-  name VARCHAR,
-);
+CREATE DATABASE wildlife_tracker;
+\c wildlife_tracker;
+CREATE TABLE animals (id PRIMARY KEY, name VARCHAR);
+CREATE TABLE endangeredAnimals (id PRIMARY KEY, name VARCHAR, health VARCHAR, age VARCHAR);
+CREATE TABLE sightings (id PRIMARY KEY, location VARCHAR, rangername VARCHAR, sightingtime VARCHAR );
+CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
