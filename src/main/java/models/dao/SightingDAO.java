@@ -11,7 +11,7 @@ public interface SightingDAO {
     //read
     List<Sightings> getAll();
     //update
-    void update(int id, String name, String location, String rangerName, LocalDateTime sightingTime);
+    void update(int id, String name, String location, String rangerName);
     //delete
     void deleteById(int id);
     void clearAll();

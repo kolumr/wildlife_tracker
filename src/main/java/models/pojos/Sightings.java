@@ -9,7 +9,7 @@ public class Sightings {
     private LocalDateTime sightingTime;
     private int id;
 
-    public Sightings(int id, String name, String location, String rangerName, LocalDateTime sightingTime) {
+    public Sightings(int id, String location, String rangerName) {
         this.id  = id;
         this.location = location;
         this.rangerName = rangerName;
