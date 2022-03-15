@@ -1,0 +1,11 @@
+{{#partial "content"}}
+    {{#if animals}}
+        {{#each animals}}
+            <div>
+                <h2>ID: {{id}}</h2>
+                <h2>Name: {{name}}</h2>
+            </div>
+        {{/each}}
+    {{/if}}
+{{/partial}}
+{{> layout.hbs}}
